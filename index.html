@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="connect.js" async></script>
+    <script src="connect.mjs" async></script>
     <link rel="stylesheet" href="styles.css" type="text/css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,32 +9,42 @@
     <title>Генератор паролей</title>
 </head>
 <body>
-    <div id="CheckboxesDiv">
-        <p>
-            <input type="checkbox" class="checkbox" id="numbersFlag" checked>
-            <label for="numbersFlag">Включить в создание пароля цифры</label>
-        </p>
-        <p>
-            <input type="checkbox" class="checkbox" id="lowerCaseFlag" checked>
-            <label for="lowerCaseFlag" class="_checkbox">Включить в создание пароля маленькие буквы</label>
-        </p>
-        <p>
-            <input type="checkbox" class="checkbox" id="upperCaseFlag" checked>
-            <label for="upperCaseFlag">Включить в создание пароля большые буквы</label>
-        </p>
-        <p>
-            <input type="checkbox" class="checkbox" id="specialSymbolsFlag">
-            <label for="specialSymbolsFlag">Включить в создание пароля спец. символы</label>
-        </p>
-    </div>
-    <div>
-        <input type="number" id="lengthFlag" value="45" step="5">
-    </div>
-    <div id="generateButtonDiv">
-        <button class="btn" id="generateButton">
-            Сгенерировать пароль
-        </button>
-        <p id="outputPassword" class="outp"></p>
+    <div class="fixed_block">
+        <div id="CheckboxesDiv">
+            <p>
+                <input type="checkbox" class="checkbox" id="numbersFlag" checked>
+                <label for="numbersFlag">Включить в создание пароля цифры</label>
+            </p>
+            <p>
+                <input type="checkbox" class="checkbox" id="lowerCaseFlag" checked>
+                <label for="lowerCaseFlag" class="_checkbox">Включить в создание пароля маленькие буквы</label>
+            </p>
+            <p>
+                <input type="checkbox" class="checkbox" id="upperCaseFlag" checked>
+                <label for="upperCaseFlag">Включить в создание пароля большые буквы</label>
+            </p>
+            <p>
+                <input type="checkbox" class="checkbox" id="specialSymbolsFlag">
+                <label for="specialSymbolsFlag">Включить в создание пароля спец. символы</label>
+            </p>
+        </div>
+        <div>
+            <button class="btn" id="generateButton">
+                Сгенерировать пароль
+            </button>
+            <button class="btn" id="customSymbolsButton">
+                Сгенерировать пароль из кастомных символов
+            </button>
+        </div>
+        <div>
+            <input type="number" id="lengthInput" value="45" step="5">
+            <input type="text" id="customSymbolsInput">
+        </div>
+        <div id="generateButtonDiv">
+            <p id="outputPasswordP">
+                <input type="text" class="outp" id="outputPassword">
+            </p>    
+        </div>
     </div>
 </body>
 </html>
